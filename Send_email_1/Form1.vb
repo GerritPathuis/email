@@ -23,8 +23,11 @@ Public Class Form1
         e_mail.Subject = "Testing"
         e_mail.IsBodyHtml = False
         e_mail.Body = "This is the body content send in VB.net test4"
-
-        Smtp_Server.Send(e_mail)
+        Try
+            Smtp_Server.Send(e_mail)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class
 
